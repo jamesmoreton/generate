@@ -1,0 +1,69 @@
+package generator
+
+import (
+  "fmt"
+  "flag"
+  "os"
+)
+
+func HandleHelp(){
+  fmt.Println("usage: generate <command> [<args>]\n")
+  fmt.Println("Available Generate commands:\n")
+  fmt.Printf("   %s\t\t\tPerson name: first, last, and sometimes middle\n", colourize("name"))
+  fmt.Printf("   %s\t\tEmail address with variety of domains\n", colourize("email"))
+  fmt.Printf("   %s\t\tMobile phone number (UK format), sometimes with area code\n", colourize("mobile"))
+  fmt.Printf("   %s\t\tPostcode (UK)\n", colourize("postcode"))
+  fmt.Printf("   %s\tNational Insurance number (UK)\n", colourize("nationalinsurance"))
+  fmt.Println("\nSee generate <command> -help to see the usage of a specific subcommand.")
+}
+
+func colourize(s string) string {
+  colourGreen := "\u001b[32m"
+  colourReset := "\u001b[0m"
+  return colourGreen + s + colourReset
+}
+
+func HandleName(nameCmd *flag.FlagSet, count *int){
+  nameCmd.Parse(os.Args[2:])
+  validateRange(*count, 1, 100)
+  for i := 0; i < *count; i++ {
+    name := getName()
+    fmt.Println(name)
+  }
+}
+
+func HandleEmail(emailCmd *flag.FlagSet, count *int){
+  emailCmd.Parse(os.Args[2:])
+  validateRange(*count, 1, 100)
+  for i := 0; i < *count; i++ {
+    email := getEmail()
+    fmt.Println(email)
+  }
+}
+
+func HandleMobile(mobileCmd *flag.FlagSet, count *int){
+  mobileCmd.Parse(os.Args[2:])
+  validateRange(*count, 1, 100)
+  for i := 0; i < *count; i++ {
+    mobile := getMobileNumber()
+    fmt.Println(mobile)
+  }
+}
+
+func HandlePostcode(postcodeCmd *flag.FlagSet, count *int){
+  postcodeCmd.Parse(os.Args[2:])
+  validateRange(*count, 1, 100)
+  for i := 0; i < *count; i++ {
+    postcode := getPostcode()
+    fmt.Println(postcode)
+  }
+}
+
+func HandleNationalInsurance(nationalInsuranceCmd *flag.FlagSet, count *int){
+  nationalInsuranceCmd.Parse(os.Args[2:])
+  validateRange(*count, 1, 100)
+  for i := 0; i < *count; i++ {
+    nationalinsurance := getNationalInsuranceNumber()
+    fmt.Println(nationalinsurance)
+  }
+}
