@@ -12,11 +12,15 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Get current date
+      id: get-date
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+
     - uses: mr-smithers-excellent/docker-build-push@v5
       name: Build & push Docker image
       with:
         image: moretonj/generate
-        tags: v1, generate:$(date +%s), pr-${{ github.event.number }}, latest
+        tags: v1, generate-${{ steps.get-date.outputs.date }}, latest
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
