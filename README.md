@@ -22,11 +22,21 @@ A random data generator CLI tool, written in Go.
 
 ### With Docker
 
-> Prerequisites:
-> - Clone the repo
-> - Install [Docker](https://docs.docker.com/get-docker/)
+> N.B. [Docker](https://docs.docker.com/get-docker/) must be pre-installed.
 
-From the root directory `generate`, build the image:
+The Docker image is hosted on [Docker Hub](https://hub.docker.com/r/moretonj/generate). Fetch the image:
+
+```shell
+$ docker pull moretonj/generate
+```
+
+Run commands against the image:
+
+```shell
+$ docker run moretonj/generate name
+```
+
+Or clone the repo and build the image directly from the root directory `generate`:
 
 ```shell
 $ docker build -t generate .
@@ -40,11 +50,9 @@ $ docker run generate name
 
 ### With Go
 
-> Prerequisites:
-> - Clone the repo
-> - Install [Go](https://go.dev/dl/) (version 1.18)
+> N.B. [Go](https://go.dev/dl/) (version 1.18) must be pre-installed.
 
-From the root directory `generate`, build with go:
+Clone the repo and build with Go from the root directory `generate`:
 
 ```shell
 $ go build
