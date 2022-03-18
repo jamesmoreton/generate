@@ -2,7 +2,8 @@
 
 A random data generator CLI tool, written in Go.
 
-[![Build Status](https://github.com/jamesmoreton/generate/actions/workflows/ci-test.yml/badge.svg)](https://github.com/jamesmoreton/generate/actions/workflows/ci-test.yml?query=branch%3Amaster+event%3Apush)
+[![CI Test Status](https://github.com/jamesmoreton/generate/actions/workflows/ci-test.yml/badge.svg)](https://github.com/jamesmoreton/generate/actions/workflows/ci-test.yml?query=branch%3Amaster+event%3Apush)
+[![CI Docker Status](https://github.com/jamesmoreton/generate/actions/workflows/ci-docker.yml/badge.svg)](https://github.com/jamesmoreton/generate/actions/workflows/ci-docker.yml)
 
 ## Features
 
