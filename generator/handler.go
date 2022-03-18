@@ -7,14 +7,17 @@ import (
 )
 
 func HandleHelp(){
-  fmt.Println("usage: generate <command> [<args>]\n")
-  fmt.Println("Available Generate commands:\n")
+  fmt.Println("usage: generate <command> [<args>]")
+  fmt.Println()
+  fmt.Println("Available Generate commands:")
+  fmt.Println()
   fmt.Printf("   %s\t\t\tPerson name: first, last, and sometimes middle\n", colourize("name"))
   fmt.Printf("   %s\t\tEmail address with variety of domains\n", colourize("email"))
   fmt.Printf("   %s\t\tMobile phone number (UK format), sometimes with area code\n", colourize("mobile"))
   fmt.Printf("   %s\t\tPostcode (UK)\n", colourize("postcode"))
   fmt.Printf("   %s\tNational Insurance number (UK)\n", colourize("nationalinsurance"))
-  fmt.Println("\nSee generate <command> -help to see the usage of a specific subcommand.")
+  fmt.Println()
+  fmt.Println("See generate <command> -help to see the usage of a specific subcommand.")
 }
 
 func colourize(s string) string {
