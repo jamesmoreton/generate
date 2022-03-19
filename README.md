@@ -18,6 +18,10 @@ A random data generator CLI tool, written in Go.
 - **National Insurance number (UK)**  
   National Insurance number (UK).
 
+![Generate GIF][generate]
+
+[generate]: resources/generate.gif "Generate GIF"
+
 ## Setup
 
 ### With Docker
