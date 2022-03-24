@@ -7,6 +7,6 @@ ADD . .
 RUN go mod download && go mod verify
 RUN go build -v -o generate
 
-FROM alpine:3.15.1
+FROM alpine:3.15.2
 COPY --from=build /generate /usr/local/bin
 ENTRYPOINT ["generate"]
