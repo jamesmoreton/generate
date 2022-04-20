@@ -1,8 +1,8 @@
-name: CI Docker
+name: CI Push to Docker
 
 on:
   workflow_run:
-    workflows: ["CI Test"]
+    workflows: ["CI Master Test"]
     types: [completed]
 
 jobs:
@@ -26,4 +26,4 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
-      - run: echo 'Test CI workflow failed - not pushing to Docker.'
+      - run: echo 'Test CI workflow failed on master - not pushing to Docker.'
