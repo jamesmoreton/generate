@@ -5,16 +5,33 @@ import (
   "strings"
 )
 
-func getName() string {
+func getName(title *bool) string {
   first := getData("firstnames")
   last := getData("lastnames")
 
+  if *title {
+    title := getTitle()
+    first = fmt.Sprintf("%s %s", title, first)
+  }
+
   if oneInNChance(2) {
     middle := getData("firstnames")
-    return fmt.Sprintf("%s %s %s", first, middle, last)
+    first = fmt.Sprintf("%s %s", first, middle)
   }
 
   return fmt.Sprintf("%s %s", first, last)
+}
+
+func getTitle() string {
+  titles := []string{
+    "Mr",
+    "Miss",
+    "Mrs",
+    "Ms",
+    "Mx",
+    "Dr",
+  }
+  return getRandomItem(titles)
 }
 
 func getEmail() string {

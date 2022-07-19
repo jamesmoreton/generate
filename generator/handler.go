@@ -11,7 +11,7 @@ func HandleHelp(){
   fmt.Println()
   fmt.Println("Available Generate commands:")
   fmt.Println()
-  fmt.Printf("   %s\t\t\tPerson name: first, last, and sometimes middle\n", colourize("name"))
+  fmt.Printf("   %s\t\t\tPerson first, last, and sometimes middle name, with optional title\n", colourize("name"))
   fmt.Printf("   %s\t\tEmail address with variety of domains\n", colourize("email"))
   fmt.Printf("   %s\t\tMobile phone number (UK format), sometimes with area code\n", colourize("mobile"))
   fmt.Printf("   %s\t\tPostcode (UK)\n", colourize("postcode"))
@@ -26,11 +26,11 @@ func colourize(s string) string {
   return colourGreen + s + colourReset
 }
 
-func HandleName(nameCmd *flag.FlagSet, count *int){
+func HandleName(nameCmd *flag.FlagSet, title *bool, count *int){
   nameCmd.Parse(os.Args[2:])
   validateRange(*count, 1, 100)
   for i := 0; i < *count; i++ {
-    name := getName()
+    name := getName(title)
     fmt.Println(name)
   }
 }
