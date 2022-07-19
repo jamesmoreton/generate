@@ -8,15 +8,15 @@ A random data generator CLI tool, written in Go.
 ## Features
 
 - **Name**  
-  Person name: first, last, and sometimes middle.
+  Person first, last, and sometimes middle name, with optional title
 - **Email**  
-  Email address with variety of domains.
+  Email address with variety of domains
 - **Mobile**  
-  Mobile phone number (UK format), sometimes with area code.
+  Mobile phone number (UK format), sometimes with area code
 - **Postcode**  
-  Postcode (UK).
+  Postcode (UK)
 - **National Insurance number (UK)**  
-  National Insurance number (UK).
+  National Insurance number (UK)
 
 ![Generate GIF][generate]
 

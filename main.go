@@ -13,6 +13,7 @@ func main() {
 
   cntUsage := "Number of randomly generated items to return"
   nameCmd := flag.NewFlagSet("name", flag.ExitOnError)
+  nameTitle := nameCmd.Bool("title", false, "Prefix name with title of person")
   nameCnt := nameCmd.Int("count", 1, cntUsage)
 
   emailCmd := flag.NewFlagSet("email", flag.ExitOnError)
@@ -36,7 +37,7 @@ func main() {
     case "help":
       generator.HandleHelp()
     case "name":
-      generator.HandleName(nameCmd, nameCnt)
+      generator.HandleName(nameCmd, nameTitle, nameCnt)
     case "email":
       generator.HandleEmail(emailCmd, emailCnt)
     case "mobile":
