@@ -7,7 +7,6 @@ on:
       - reopened
       - synchronize
       - edited
-      - ready_for_review
       - unlabeled
 
 permissions:
