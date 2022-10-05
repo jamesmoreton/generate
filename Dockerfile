@@ -1,4 +1,4 @@
-FROM golang:1.19.1-alpine3.15 AS build
+FROM golang:1.19.2-alpine3.15 AS build
 
 WORKDIR /generate
 
